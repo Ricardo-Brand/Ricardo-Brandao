@@ -47,6 +47,8 @@ int main(){
 
 
 
+
+
 // Exercício 3
 #include <iostream>
 
@@ -203,5 +205,80 @@ int main(){
 	cout << "O menor valor de faturamento eh: " << menor_valor;
 	cout << "\n\nO maior valor de faturmamento eh: " << maior_valor;
 	cout << "\n\nO numero de dias no mes em que o valor diario superou a medial mensal eh: " << j << endl;
+	return 0;
+}
+
+
+
+
+// Exercício 4
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main(){
+	float sp = 67836.43, rj = 36678.66, mg = 29229.88, es = 27165.48, outros = 19849.53, perc , total = 0;
+	int op;
+	string estado;
+	
+	total = sp + rj + mg + es + outros;
+	
+	cout << "Qual das opcoes deseja saber o percentual dentro do valor total mensal:\n1 - SP RS67.836,43\n2 - RJ RS36.678\n3 - MG RS29.229,88\n4 - ES RS27.165,48\n5 - Outros RS19.849,53\n\nDigite a opcao: ";
+	cin >> op;
+	
+	system("cls");
+	
+	switch(op){
+		case 1:
+			perc = (sp * 100) / total;
+			estado = "SP";
+			break;
+		case 2:
+			perc = (rj * 100) / total;
+			estado = "RJ";
+			break;
+		case 3:
+			perc = (mg * 100) / total;
+			estado = "MG";
+			break;
+		case 4:
+			perc = (es * 100) / total;
+			estado = "ES";
+			break;
+		case 5:
+			perc = (outros * 100) / total;
+			estado = "Outros";
+			break;
+	}
+	
+	cout << fixed << setprecision(2);
+	cout << "A porcentagem do estado '" << estado << "' eh: " << perc << "%";
+	
+	return 0;
+}
+
+
+
+
+// Exercício 5
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+int main(){
+	string reverter = "reverter", primaria = "";
+	char secundaria[reverter.length()];
+	int tam = reverter.length();
+	
+	for(int i = 0; i <= sizeof(secundaria); i++){
+		secundaria[i] = reverter[tam - i];
+		
+		primaria = primaria + secundaria[i];
+	}
+	
+	cout << "A string normal eh: " << reverter;
+	cout << "\n\nA string invertida eh: " << primaria;
 	return 0;
 }
